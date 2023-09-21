@@ -28,8 +28,8 @@ do
     do
         cd /leonardo/home/userexternal/lstorchi/BERTHA/pybertha/pyberthart
         export OMP_NUM_THREADS=$numt
-        python3 pyberthart.py -g $mol.xyz --fittset "Au:b20" \
-            --obs "Au:dyall_vdz" \
+        python3 pyberthart.py  --berthamaxit 3 -g $mol.xyz --fittset "Au:b16" \
+            --obs "Au:default" \
             --iterations 1> $mol.out.omp.gpu.$numt 2> $mol.err.omp.gpu.$numt 
         mv dipole.txt $mol.dipole.txt.omp.gpu.$numt
         cd ../
